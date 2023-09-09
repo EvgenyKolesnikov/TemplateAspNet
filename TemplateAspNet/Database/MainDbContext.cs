@@ -7,8 +7,9 @@ namespace TemplateAspNet.Database
 {
     public class MainDbContext : DbContext
     {
-        public MainDbContext(DbContextOptions<MainDbContext> options) : base(options) 
-        { 
+        public MainDbContext(DbContextOptions<MainDbContext> options) : base(options)
+        {
+            Database.EnsureDeleted();
             Database.EnsureCreated();
         }
 
